@@ -149,6 +149,4 @@ class Robot:
 
 
 robot = Robot()
-
-
 robot.does()
