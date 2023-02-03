@@ -7,11 +7,18 @@ class Pokemon:
         self.skills = skills.split('/')
         print(f"포켓몬 생성 :", end=' ')
 
-    def get_owner(self):
+    @property
+    def owner(self):
+        return self.__hidden_owner
+
+    @owner.setter #property 생성
+    def owner(self):
         return self.hidden_owner
 
-    def set_owner(self, owner):
-        self.hidden_owner = owner
+
+
+    # def set_owner(self, owner):
+    #     self.hidden_owner = owner
 
     def info(self):
         print(f"{self.owner}의 포켓몬이 사용 가능한 스킬")
@@ -60,6 +67,7 @@ class Pairi(Pokemon):  # inheritance
 
 
 while True:
+    print(f"총 {Pokemon.count}마리의 포켓몬이 생성되었습니다.")
     menu = input('1) 포켓몬 생성  2) 프로그램 종료 : ')
     if menu == '2':
         print('프로그램을 종료합니다')
